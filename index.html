@@ -12,6 +12,25 @@
       <ul id="people"></ul>
       <h4>List Of Players</h4>
       <ul id="list-players"></ul>
+      <h4>Add Player</h4>
+      <form id="player-form">
+        ID:<br>
+        <input id="p-id" type="text" placeholder="Enter ID #">
+        <br>
+        Name:<br>
+        <input id="p-name" type="text" name="name" placeholder="Enter Name">
+        <br>
+        Age:<br>
+        <input id="p-age" type="text" placeholder="Enter age">
+        <br>
+        Skillset:<br>
+        <input id="p-skills" type="text" placeholder="Enter skillset">
+        <br>
+        Place born:<br>
+        <input id="place-born" type="text" placeholder="Enter place of birth">
+        <button onclick="submitToPeople()">Submit information</button>
+      </form>
+      <br>
   </div>
   <button onclick="listPeopleChoices()">List People</button>
   <button onclick="listPlayers()">List Players</button>
