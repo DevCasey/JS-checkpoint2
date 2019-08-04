@@ -107,10 +107,12 @@ const arrOfPeople = [
     console.log(`li ${name} was clicked`)
   }
 
-  const listPlayers = () => {
-      const playersElement = document.getElementById('list-players');
-      listOfPlayers.map(players => {
-          const li = document.createElement('li');
-          
-      })
+  let listPlayers = () => {
+    const players = document.getElementById('list-players');
+    
+    listOfPlayers.forEach(function(element) {
+      const li = document.createElement('li');
+      li.appendChild(document.createTextNode(element));
+      players.append(li);
+    })
   }
