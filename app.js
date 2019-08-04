@@ -64,19 +64,20 @@ const arrOfPeople = [
       }
   }
 
-submitToPeople = () => {
-  let id = document.getElementById('p-id');
-  let name = document.getElementById('p-name');
-  let age = document.getElementById('p-age');
-  let skill = document.getElementById('p-skills');
-  let born = document.getElementById('place-born');
+  submitToPeople = (id, name, age, skill, born) => {
+    let id = document.getElementById('p-id');
+    let name = document.getElementById('p-name');
+    let age = document.getElementById('p-age');
+    let skill = document.getElementById('p-skills');
+    let born = document.getElementById('place-born');
 
-  id = People.this.id
-  console.log('class is working')
-  console.log(id);
-}
 
-  
+   
+
+
+  }
+
+
   class Player extends People{
     constructor(canThrowBall, canDodgeBall, hasPaid, isHealthy, yearsExperience){
         super(name, skillSet);
