@@ -78,8 +78,12 @@ const arrOfPeople = [
 
 
   class BlueTeammate extends Player {
-    constructor(){}
+    constructor(name){
+        super(canThrowBall, canDodgeBall)
+        this.name = name
+    }
   }
+
   class RedTeammate extends Player {
     constructor(){}
   }
@@ -90,15 +94,23 @@ const arrOfPeople = [
       const li = document.createElement("li")
       const button = document.createElement("button")
       button.innerHTML = "Make Player"
-      button.addEventListener('click', function() {makePlayer(person.id)} )
+      button.addEventListener('click', function() {makePlayer(person.name)} )
       li.appendChild(button)
       li.appendChild(document.createTextNode(person.name + " - " + person.skillSet))
       listElement.append(li)
     })
   }
   
-  const makePlayer = (id) => {
-      listOfPlayers.push(person.name);
-      console.log(listOfPlayers)
-    console.log(`li ${id} was clicked!`)
+  const makePlayer = (name) => {
+    listOfPlayers.push(name)
+    console.log(listOfPlayers)
+    console.log(`li ${name} was clicked`)
+  }
+
+  const listPlayers = () => {
+      const playersElement = document.getElementById('list-players');
+      listOfPlayers.map(players => {
+          const li = document.createElement('li');
+          
+      })
   }
