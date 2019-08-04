@@ -53,6 +53,11 @@ const arrOfPeople = [
   const listOfPlayers = []
   const blueTeam = []
   const redTeam = []
+  let getId = document.getElementById('p-id');
+  let getName = document.getElementById('p-name');
+  let getAge = document.getElementById('p-age');
+  let getSkill = document.getElementById('p-skills')
+  let getBorn = document.getElementById('place-born');
 
   class People {
       constructor(id, name, age, skillSet, placeBorn) {
@@ -62,19 +67,21 @@ const arrOfPeople = [
           this.skillSet = skillSet;
           this.placeBorn = placeBorn;
       }
+      pushToPeople() {
+        let obj = {
+          id: this.id,
+          name: this.name,
+          age: this.age,
+          skillSet: this.skillSet,
+          placeborn: this.placeBorn
+        }
+        arrOfPeople.push(obj);
+      }
   }
 
-  submitToPeople = (id, name, age, skill, born) => {
-    let id = document.getElementById('p-id');
-    let name = document.getElementById('p-name');
-    let age = document.getElementById('p-age');
-    let skill = document.getElementById('p-skills');
-    let born = document.getElementById('place-born');
-
-
-   
-
-
+  submitToPeople = () => {
+   let arg = new People(getId.value, getName.value, getAge.value, getSkill.value, getBorn.value);
+   console.log(arrOfPeople);
   }
 
 
