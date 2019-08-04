@@ -53,14 +53,34 @@ const arrOfPeople = [
   const listOfPlayers = []
   const blueTeam = []
   const redTeam = []
+
+  class People {
+      constructor(id, name, age, skillSet, placeBorn) {
+          this.id = id;
+          this.name = name;
+          this.age = age;
+          this.skillSet = skillSet;
+          this.placeBorn = placeBorn;
+      }
+  }
+
   
-  class player {
+  class Player extends People{
+    constructor(canThrowBall, canDodgeBall, hasPaid, isHealthy, yearsExperience){
+        super(name, skillSet);
+        this.canThrowBall = canThrowBall;
+        this.canDodgeBall = canDodgeBall;
+        this.hasPaid = hasPaid;
+        this.isHealthy = isHealthy;
+        this.yearsExperience = yearsExperience;
+    }
+  }
+
+
+  class BlueTeammate extends Player {
     constructor(){}
   }
-  class blueTeammate {
-    constructor(){}
-  }
-  class redTeammate {
+  class RedTeammate extends Player {
     constructor(){}
   }
   
@@ -78,5 +98,7 @@ const arrOfPeople = [
   }
   
   const makePlayer = (id) => {
+      listOfPlayers.push(person.name);
+      console.log(listOfPlayers)
     console.log(`li ${id} was clicked!`)
   }
