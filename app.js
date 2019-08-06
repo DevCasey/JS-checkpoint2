@@ -1,4 +1,4 @@
-const arrOfPeople = [
+let arrOfPeople = [
     {
       id: 2,
       name: "Charles Young",
@@ -79,10 +79,14 @@ const arrOfPeople = [
       }
   }
 
-  submitToPeople = () => {
-   let arg = new People(getId.value, getName.value, getAge.value, getSkill.value, getBorn.value);
-   console.log(arrOfPeople);
+
+
+  function submitToPeople() {
+   let arg = new People(parseInt(getId.value, 10), getName.value, parseInt(getAge.value, 10), getSkill.value, getBorn.value);
+   console.log(arg)
+   console.log(typeof arg);
   }
+
 
 
   class Player extends People{
