@@ -53,11 +53,11 @@ let arrOfPeople = [
   const listOfPlayers = []
   const blueTeam = []
   const redTeam = []
-  let getId = document.getElementById('p-id');
-  let getName = document.getElementById('p-name');
-  let getAge = document.getElementById('p-age');
-  let getSkill = document.getElementById('p-skills')
-  let getBorn = document.getElementById('place-born');
+  // let getId = document.getElementById('p-id');
+  // let getName = document.getElementById('p-name');
+  // let getAge = document.getElementById('p-age');
+  // let getSkill = document.getElementById('p-skills')
+  // let getBorn = document.getElementById('place-born');
 
   class People {
       constructor(id, name, age, skillSet, placeBorn) {
@@ -104,13 +104,18 @@ let arrOfPeople = [
   class BlueTeammate extends Player {
     constructor(name){
         super(canThrowBall, canDodgeBall)
-        this.name = name
+        this.name = name;
+        this.canThrowBall = canThrowBall;
+        this.canDodgeBall = canDodgeBall;
     }
   }
 
   class RedTeammate extends Player {
     constructor(name){
       super(canThrowBall, canDodgeBall);
+      this.name = name;
+      this.canThrowBall = canThrowBall;
+      this.canDodgeBall = canDodgeBall;
     }
   }
   
