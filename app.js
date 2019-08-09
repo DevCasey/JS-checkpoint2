@@ -67,25 +67,25 @@ let arrOfPeople = [
           this.skillSet = skillSet;
           this.placeBorn = placeBorn;
       }
-      pushToPeople() {
-        let obj = {
-          id: this.id,
-          name: this.name,
-          age: this.age,
-          skillSet: this.skillSet,
-          placeborn: this.placeBorn
-        }
-        arrOfPeople.push(obj);
-      }
+      // pushToPeople() {
+      //   let obj = {
+      //     id: this.id,
+      //     name: this.name,
+      //     age: this.age,
+      //     skillSet: this.skillSet,
+      //     placeborn: this.placeBorn
+      //   }
+      //   arrOfPeople.push(obj);
+      // }
   }
 
 
 
-  function submitToPeople() {
-   let arg = new People(parseInt(getId.value, 10), getName.value, parseInt(getAge.value, 10), getSkill.value, getBorn.value);
-   console.log(arg)
-   console.log(typeof arg);
-  }
+  // function submitToPeople() {
+  //  let arg = new People(parseInt(getId.value, 10), getName.value, parseInt(getAge.value, 10), getSkill.value, getBorn.value);
+  //  console.log(arg)
+  //  console.log(typeof arg);
+  // }
 
 
 
@@ -109,7 +109,9 @@ let arrOfPeople = [
   }
 
   class RedTeammate extends Player {
-    constructor(){}
+    constructor(name){
+      super(canThrowBall, canDodgeBall);
+    }
   }
   
   const listPeopleChoices = () => {
@@ -118,7 +120,10 @@ let arrOfPeople = [
       const li = document.createElement("li")
       const button = document.createElement("button")
       button.innerHTML = "Make Player"
-      button.addEventListener('click', function() {makePlayer(person.name)} )
+      button.addEventListener('click', function() {
+        makePlayer(person.name)
+        li.remove();
+      })
       li.appendChild(button)
       li.appendChild(document.createTextNode(person.name + " - " + person.skillSet))
       listElement.append(li)
@@ -126,9 +131,15 @@ let arrOfPeople = [
   }
   
   const makePlayer = (name) => {
-    listOfPlayers.push(name)
-    console.log(listOfPlayers)
-    console.log(`li ${name} was clicked`)
+    console.log(`li ${name} was clicked`);
+    const getPlayersId = document.getElementById('players');
+    const createPlayersLi = document.createElement('li');
+    const createRedTeamButton = document.createElement('button');
+    const createBlueTeamButton = document.createElement('button');
+
+    createPlayersLi.appendChild(document.createTextNode(name));
+    getPlayersId.append(createPlayersLi)
+    
   }
 
   let listPlayers = () => {
