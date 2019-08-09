@@ -141,9 +141,22 @@ let arrOfPeople = [
     const createPlayersLi = document.createElement('li');
     const createRedTeamButton = document.createElement('button');
     const createBlueTeamButton = document.createElement('button');
+    const getElementByTag = document.getElementsByTagName('button');
+    
 
     createPlayersLi.appendChild(document.createTextNode(name));
-    getPlayersId.append(createPlayersLi)
+    getPlayersId.append(createPlayersLi, createRedTeamButton, createBlueTeamButton)
+    createRedTeamButton.innerHTML = "Red Team";
+    createBlueTeamButton.innerHTML = "Blue Team";
+
+    getElementByTag.addEventListener('click', function() {
+      if(getElementByTag.innerHTML == "Red Team") {
+        // Switch to red team function
+      } else {
+        // Switch to blue team function
+      }
+    })
+    
     
   }
 
